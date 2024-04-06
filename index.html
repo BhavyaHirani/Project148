@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene background="color: #111111">
+            <a-entity position="0 0 20">
+                <a-camera></a-camera>
+            </a-entity>
+
+            <a-assets timeout="10000">
+                <a-asset-item id="perobj" src="./Person/tinker.obj" ></a-asset-item>
+                <a-asset-item id="permtl" src="./Person/obj.mtl" ></a-asset-item>
+                <a-asset-item id="lampobj" src="./Lamp post/tinker.obj" ></a-asset-item>
+                <a-asset-item id="lampmtl" src="./Lamp post/obj.mtl" ></a-asset-item>
+            </a-assets>
+
+            <a-entity light="type: ambient; color: #999999; intensity: 0.5"></a-entity>
+
+            <a-entity position="0 0 0" rotation="0 0 0" >
+                <a-plane color="#2B1700" position="0 0 -20" height="25" width="40" shadow="receive: true" visible="true" ></a-plane>
+            </a-entity>
+
+            <a-entity position="0 0 0" rotation="0 0 0" >
+                <a-plane color="#122334" position="0 -12.5 -10" height="25" width="40" rotation="-90 0 0" shadow="receive: true" visible="true" ></a-plane>
+            </a-entity>
+
+            <a-entity obj-model="obj: #perobj; mtl: #permtl" position="-13 -12.5 -15" rotation="-90 0 0" scale="0.3 0.3 0.3" shadow="cast: true"  visible="true" ></a-entity>
+
+            <a-entity obj-model="obj: #lampobj; mtl: #lampmtl" position="-8 -12.5 -17" rotation="-90 0 0" scale="0.3 0.3 0.3"  visible="true" ></a-entity>
+            
+            <a-entity>
+                <a-entity light="type: point; color: #FFF; intensity: 4; castShadow: true; decay: 3" position="-26 4 -8" ></a-entity>
+            </a-entity>  
+
+        </a-scene>
+    </body>
+</html> 
